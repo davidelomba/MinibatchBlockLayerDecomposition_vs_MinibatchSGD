@@ -6,24 +6,6 @@ This project aims to analyze the performance of the **Minibatch Block Layer Deco
 ## Theoretical Background
 The MBLD algorithm differs from Minibatch SGD by updating only a subset of weights within each batch, using a decomposition technique. Instead of updating all layers during each iteration, MBLD selects a subset of layers to update.
 
-### Key Definitions
-- **{xp, yp}Pp=1**: Dataset samples and labels of size P.
-- **w**: Set of weights, with **w0** as the initial weights.
-- **Bh**: The h-th batch.
-- **J**: Subset of layers (J ⊆ {1, ..., L}).
-- **lj**: The j-th layer.
-- **w̃lj**: The weight vector of layer **j** to be updated.
-
-### Weight Update Formula
-Weights of a subset of layers are updated according to the anti-gradient:
-
-w̃l = w̃l - αk∇wl f(w̃l)
-
-Where:
-- **αk** is the stepsize, updated per minibatch using the formula:
-
-  αk = αk(1 - ϵαk),  where α0 > 0, ϵ ≤ 1
-
 ## Experiments
 ### Neural Network Structure
 A fully-connected neural network with the following architecture was used:
